@@ -13,7 +13,7 @@ public class Route {
     private enum Method {
         get,post,put,delete
     }
-    private String path;
+    private String[] path;
     private String[] parameter;
     private String response;
 }
