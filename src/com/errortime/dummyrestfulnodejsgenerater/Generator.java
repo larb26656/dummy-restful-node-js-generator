@@ -3,19 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dummy.restful.node.js.generater;
+package com.errortime.dummyrestfulnodejsgenerater;
 
 /**
  *
  * @author Admin
  */
-public class DummyRestfulNodeJsGenerater {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Generator {
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
-    
 }
