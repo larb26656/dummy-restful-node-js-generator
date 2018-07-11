@@ -10,10 +10,48 @@ package com.errortime.dummyrestfulnodejsgenerater.model;
  * @author Admin
  */
 public class Route {
-    private enum Method {
-        get,post,put,delete
-    }
+    private String method;
     private String[] path;
     private String[] parameter;
     private String response;
+
+    public Route(String method, String[] path, String[] parameter, String response) {
+        this.method = method;
+        this.path = path;
+        this.parameter = parameter;
+        this.response = response;
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public String[] getPath() {
+        return path;
+    }
+
+    public void setPath(String[] path) {
+        this.path = path;
+    }
+
+    public String[] getParameter() {
+        return parameter;
+    }
+
+    public void setParameter(String[] parameter) {
+        this.parameter = parameter;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
+    
 }

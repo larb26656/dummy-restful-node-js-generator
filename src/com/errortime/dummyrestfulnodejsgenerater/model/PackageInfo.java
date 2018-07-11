@@ -5,25 +5,19 @@
  */
 package com.errortime.dummyrestfulnodejsgenerater.model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Admin
  */
-public class Config {
+public class PackageInfo {
     private String applicationName;
     private String version;
     private String author;
-    private int port;
-    private ArrayList<Route> routeList;
 
-    public Config(String applicationName, String version, String author, int port, ArrayList<Route> routeList) {
+    public PackageInfo(String applicationName, String version, String author) {
         this.applicationName = applicationName;
         this.version = version;
         this.author = author;
-        this.port = port;
-        this.routeList = routeList;
     }
 
     public String getApplicationName() {
@@ -50,20 +44,4 @@ public class Config {
         this.author = author;
     }
 
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
-    public ArrayList<Route> getRouteList() {
-        return routeList;
-    }
-
-    public void setRouteList(ArrayList<Route> routeList) {
-        this.routeList = routeList;
-    }
-    
 }
