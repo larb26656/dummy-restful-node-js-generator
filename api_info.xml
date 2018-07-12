@@ -1,46 +1,290 @@
 <api_info>
-  <application_name>GSB HR Dummy Restful api</application_name>
+  <application_name>GSB-HR-Dummy-Restful-api</application_name>
   <version>1.0.0</version>
   <author>ErrorTime</author>
   <server_info>
     <port>3000</port>
     <route_list>
-      <route method="post">
+      <route method="get">
         <path>
-          <name>ssss</name>
-          <name>sdsd</name>
+          <name>api</name>
+          <name>personal</name>
         </path>
         <parameter>
-          <name></name>
+          <name>employeeId</name>
         </parameter>
-        <response>test</response>
+        <response><![CDATA[{
+  "personal": [
+    {
+      "VALIDBEGIN": "20050101",
+      "VALIDEND": "99991231",
+      "RECORDNR": "000",
+      "FORMOFADDRESS": "1",
+      "FIRSTNAME": "วินัย",
+      "LASTNAME": "หลากหลาย",
+      "NAMEATBIRTH": "",
+      "SECONDNAME": "",
+      "MIDDLENAME": "",
+      "FULLNAME": "",
+      "KNOWNAS": "",
+      "SURNAMEPREFIX": "จ่าตรี",
+      "ACADEMICGRADE": "",
+      "SECONDACADGRADE": "",
+      "INITIALS": "",
+      "GENDER": "1",
+      "DATEOFBIRTH": "19880318",
+      "BIRTHPLACE": "",
+      "STATEOFBIRTH": "",
+      "COUNTRYOFBIRTH": "",
+      "MARITALSTATUS": "0",
+      "NAMEOFMARITALSTATUS": "",
+      "MARITALSTATUSSINCE": "00000000",
+      "NUMBEROFCHILDREN": "000",
+      "RELIGION": "Z0",
+      "LANGUAGE": "E",
+      "LANGUAGE_ISO": "EN",
+      "NATIONALITY": "TH",
+      "SECONDNATIONALITY": "",
+      "THIRDNATIONALITY": "",
+      "IDNUMBER": "",
+      "NAMEOFFORMOFADDRESS": "นาย",
+      "NAMEOFGENDER": "Male",
+      "NAMEOFSTATEOFBIRTH": "",
+      "NAMEOFCOUNTRYOFBIRTH": "",
+      "NAMEOFRELIGION": "พุทธ",
+      "NAMEOFLANGUAGE": "English",
+      "NAMEOFNATIONALITY": "ไทย",
+      "NAMEOFSECONDNATIONALITY": "",
+      "NAMEOFTHIRDNATIONALITY": "",
+      "NAME_FORMAT_INDICATOR": "01"
+    }
+  ],
+  "status": 200
+}]]></response>
       </route>
       <route method="get">
         <path>
-          <name>sdsd</name>
-          <name>sdsd</name>
+          <name>api</name>
+          <name>personal</name>
+          <name>absenceQuota</name>
         </path>
         <parameter>
+          <name>employeeId</name>
         </parameter>
-        <response>{<![CDATA[
-  "Promotion": [
+        <response><![CDATA[{
+  "absenceQuota": [
     {
-      "id": 3,
-      "name": "ช้อป ซูเปอร์ รับส่วนลด 50% ทดสอบแก้ไข1////",
-      "description": "สิทธิพิเศษสำหรับลูกค้าบัตรเครดิตธนาคารออมสิน รับส่วนลด 100 บาท เมื่อช้อปครบ 2,000 บาท/เซลส์สลิป ที่ กูร์เมต์ มาเก็ต & โฮม เฟรช มาร์ท) ทดสอบการแก้ไขโปรโมชั่นเดิม",
-      "image_path": "https://mhr-dev.loxleyorbit.com//upload/performance/promotions/eccbc87e4b5ce2fe28308fd9f2a7baf3.jpg",
-      "start_date": "06 มิถุนายน 2561",
-      "end_date": "31 สิงหาคม 2561"
+      "QUOTATYPE": "02",
+      "QUOTATEXT": "สิทธิลาป่วย",
+      "FROM_DATE": "20180101",
+      "TO_DATE": "20181231",
+      "DEDUCTBEGIN": "20180101",
+      "DEDUCTEND": "20181231",
+      "ENTITLE": "40.00000",
+      "DEDUCT": "0.00000",
+      "REST": "40.00000",
+      "TIMEUNIT_TEXT": "วัน"
+    }
+  ],
+  "status": 200
+}]]></response>
+      </route>
+      <route method="get">
+        <path>
+          <name>api</name>
+          <name>medical</name>
+          <name>quota</name>
+        </path>
+        <parameter>
+          <name>employeeId</name>
+        </parameter>
+        <response><![CDATA[{
+  "medical_quota": [
+    {
+      "RULETEXT": "สิทธิค่ารักษาพยาบาลของบิดามารดา",
+      "USEDCNT": "0",
+      "QUOTA": "0.00",
+      "USED": "60000.00",
+      "REST": "-60000.00"
     },
     {
-      "id": 13,
-      "name": "dd",
-      "description": "dd",
-      "image_path": "https://mhr-dev.loxleyorbit.com//upload/performance/promotions/c51ce410c124a10e0db5e4b97fc2af39.png",
-      "start_date": "08 มิถุนายน 2561",
-      "end_date": "01 ตุลาคม 2561"
+      "RULETEXT": "สิทธิค่ารักษาพยาบาลคลีนิก หรือโรงพยาบาลเอกชนกรณีผู้ป่วยนอก",
+      "USEDCNT": "0",
+      "QUOTA": "0.00",
+      "USED": "3600.00",
+      "REST": "-3600.00"
+    },
+    {
+      "RULETEXT": "สิทธิการตรวจสุขภาพ",
+      "USEDCNT": "0",
+      "QUOTA": "0.00",
+      "USED": "0.00",
+      "REST": "0.00"
     }
-  ]
+  ],
+  "status": 200
+}]]></response>
+      </route>
+      <route method="get">
+        <path>
+          <name>api</name>
+          <name>personal</name>
+          <name>currentPosition</name>
+        </path>
+        <parameter>
+          <name>employeeId</name>
+        </parameter>
+        <response><![CDATA[{
+  "current_position": {
+    "PERNR": "02702376",
+    "NAME": "น.ส. เก็จวลี พ่วงสุวรรณ",
+    "EFFECT_DATE": "20120801",
+    "ORDER_NO": "บค.2(1) - 211 / 2555",
+    "POSITION_NAME": "ผู้จัดการฝ่าย",
+    "ORG_NAME": "ฝ่ายเลขานุการธนาคาร  ขึ้นตรงผู้อำนวยการธนาคารออมสิน  ธนาคารออมสิน"
+  },
+  "status": 200
+}]]></response>
+      </route>
+      <route method="get">
+        <path>
+          <name>api</name>
+          <name>personal</name>
+          <name>holdingPosition</name>
+        </path>
+        <parameter>
+          <name>employeeId</name>
+        </parameter>
+        <response><![CDATA[{
+  "work_history": [
+    {
+      "PERNR": "02702376",
+      "NAME": "น.ส. เก็จวลี พ่วงสุวรรณ",
+      "EFFECT_DATE": "20120801",
+      "ORDER_NO": "บค.2(1) - 211 / 2555",
+      "POSITION_NAME": "ผู้จัดการฝ่าย",
+      "ORG_NAME": "ฝ่ายเลขานุการธนาคาร  ขึ้นตรงผู้อำนวยการธนาคารออมสิน  ธนาคารออมสิน"
+    },
+    {
+      "PERNR": "02702376",
+      "NAME": "น.ส. เก็จวลี พ่วงสุวรรณ",
+      "EFFECT_DATE": "20110412",
+      "ORDER_NO": "บค.2(2) - 10 / 2554",
+      "POSITION_NAME": "หัวหน้าส่วน",
+      "ORG_NAME": "ส่วนสินเชื่อองค์กรชุมชน 1  ฝ่ายสินเชื่อองค์กรชุมชน  สายงานสินเชื่อชุมชน"
+    },
+    {
+      "PERNR": "02702376",
+      "NAME": "น.ส. เก็จวลี พ่วงสุวรรณ",
+      "EFFECT_DATE": "20101201",
+      "ORDER_NO": "บค.2 (2) - 53 / 2553",
+      "POSITION_NAME": "หัวหน้าส่วน",
+      "ORG_NAME": "ส่วนพัฒนาสถาบันการเงินชุมชน  ฝ่ายสินเชื่อองค์กรชุมชน  สายงานสินเชื่อชุมชน"
+    }
+  ],
+  "status": 200
+}]]></response>
+      </route>
+      <route method="get">
+        <path>
+          <name>api</name>
+          <name>discipline</name>
+        </path>
+        <parameter>
+          <name>organizationId</name>
+          <name>employeeId</name>
+        </parameter>
+        <response><![CDATA[{  
+   "discipline_history":[  
+      {  
+         "PERNR":"03902273",
+         "FIRSTNAME":"ปนิษฐา",
+         "LASTNAME":"ธรรมฉัตรภาณี",
+         "CUR_EMP_DETAIL":"พนักงานปฏิบัติการ 7 ส่วนเลขานุการผู้บริหารระดับสูง ฝ่ายเลขานุการธนาคาร ขึ้นตรงผู้อำนวยการธนาคารออมสิน",
+         "INV_PUNISH_TYPE_TEXT":"",
+         "INV_PUNISH_DATEC":"",
+         "INV_FACT_DATE":"00000000",
+         "INV_FACT_NO":"",
+         "COMMIT_DATE":"00000000",
+         "INV_FACT_DETAIL1":"",
+         "INV_FACT_DETAIL2":"",
+         "INV_FACT_DETAIL3":"",
+         "INV_FACT_RESULT":"",
+         "INV_FACT_REASON":"",
+         "INV_FACT_PUNISH_DATE":"00000000",
+         "INV_FACT_REASON2":"",
+         "INV_FACT_REASON3":"",
+         "INV_FACT_PUNISH_COMM_NO":"",
+         "RECEIVE_INV_FACT_DATE":"00000000",
+         "INV_NO":"",
+         "APPOINT_COMMITEE_DATE":"00000000",
+         "ACCUSATION_DATE":"00000000",
+         "INV_DETAIL1":"",
+         "INV_DETAIL2":"",
+         "INV_DETAIL3":"",
+         "INV_DETAIL4":"",
+         "INV_DETAIL5":"",
+         "INV_EXTEND_NO":"",
+         "INV_EXTEND_DATE":"00000000",
+         "INV_PUNISH_TYPE":"",
+         "INV_PUNISH_REASON":"",
+         "INV_PUNISH_STEP":"0.00",
+         "INV_PUNISH_REASON2":"",
+         "INV_PUNISH_SALARY":"0",
+         "INV_PUNISH_REASON3":"",
+         "INV_PUNISH_DATE":"00000000",
+         "INV_PUNISH_COMM_DATE":"00000000",
+         "INV_PUNISH_SALARY_MONTH":"0",
+         "INV_PUNISH_COMM_NO":"",
+         "INV_OTHER_REASON":"",
+         "APPEAL_DATE":"00000000",
+         "APPEAL_NO":"",
+         "APPEAL_RESULT":"",
+         "APPEAL_REASON":"",
+         "APPEAL_STEP":"0.00",
+         "APPEAL_REASON2":"",
+         "APPEAL_SALARY":"0",
+         "APPEAL_REASON3":"",
+         "APPEAL_EFFECTIVE_DATE":"00000000",
+         "APPEAL_COMM_DATE":"00000000",
+         "APPEAL_SALARY_MONTH":"0",
+         "APPEAL_COMM_NO":"",
+         "PURIFY_DATE":"00000000",
+         "PURIFY_YEAR":"0000",
+         "PURIFY_EFFECTIVE_DATE":"00000000",
+         "PURIFY_DETAIL1":"",
+         "PURIFY_DETAIL2":""
+      }
+   ],
+   "status":200
+}]]></response>
+      </route>
+      <route method="get">
+        <path>
+          <name>api</name>
+          <name>insignia</name>
+        </path>
+        <parameter>
+          <name>employeeId</name>
+        </parameter>
+        <response><![CDATA[{
+  "insignia_history": [
+    {
+      "INSIGNIA_CODE": "10",
+      "INSIGNIA_STATUS": "02",
+      "YEAR_REQUEST": "2011",
+      "REQUEST_BY": "01",
+      "DECLAR_DATE": "20120627"
+    },
+    {
+      "INSIGNIA_CODE": "11",
+      "INSIGNIA_STATUS": "01",
+      "YEAR_REQUEST": "2018",
+      "REQUEST_BY": "01",
+      "DECLAR_DATE": "00000000"
+    }
+  ],
+  "status": 200
 }]]></response>
       </route>
     </route_list>

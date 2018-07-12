@@ -7,7 +7,7 @@ app.use(bodyParser.json())
  
 <#list serverInfo.routeList as routeLists>
 app.${routeLists.method!}('${routeLists.pathAndParameter!}', function (req, res) {
-  res.send('${routeLists.response!}')
+  res.send('${routeLists.response?js_string!}')
 })
 </#list>
  

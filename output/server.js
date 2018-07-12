@@ -4,30 +4,26 @@ const app = express()
 const port = 3000;
 app.use(bodyParser.json())
  
-app.post('ssss/sdsd', function (req, res) {
-  res.send('test')
+app.get('/api/personal/:employeeId', function (req, res) {
+  res.send('{\n  \"personal\": [\n    {\n      \"VALIDBEGIN\": \"20050101\",\n      \"VALIDEND\": \"99991231\",\n      \"RECORDNR\": \"000\",\n      \"FORMOFADDRESS\": \"1\",\n      \"FIRSTNAME\": \"วินัย\",\n      \"LASTNAME\": \"หลากหลาย\",\n      \"NAMEATBIRTH\": \"\",\n      \"SECONDNAME\": \"\",\n      \"MIDDLENAME\": \"\",\n      \"FULLNAME\": \"\",\n      \"KNOWNAS\": \"\",\n      \"SURNAMEPREFIX\": \"จ่าตรี\",\n      \"ACADEMICGRADE\": \"\",\n      \"SECONDACADGRADE\": \"\",\n      \"INITIALS\": \"\",\n      \"GENDER\": \"1\",\n      \"DATEOFBIRTH\": \"19880318\",\n      \"BIRTHPLACE\": \"\",\n      \"STATEOFBIRTH\": \"\",\n      \"COUNTRYOFBIRTH\": \"\",\n      \"MARITALSTATUS\": \"0\",\n      \"NAMEOFMARITALSTATUS\": \"\",\n      \"MARITALSTATUSSINCE\": \"00000000\",\n      \"NUMBEROFCHILDREN\": \"000\",\n      \"RELIGION\": \"Z0\",\n      \"LANGUAGE\": \"E\",\n      \"LANGUAGE_ISO\": \"EN\",\n      \"NATIONALITY\": \"TH\",\n      \"SECONDNATIONALITY\": \"\",\n      \"THIRDNATIONALITY\": \"\",\n      \"IDNUMBER\": \"\",\n      \"NAMEOFFORMOFADDRESS\": \"นาย\",\n      \"NAMEOFGENDER\": \"Male\",\n      \"NAMEOFSTATEOFBIRTH\": \"\",\n      \"NAMEOFCOUNTRYOFBIRTH\": \"\",\n      \"NAMEOFRELIGION\": \"พุทธ\",\n      \"NAMEOFLANGUAGE\": \"English\",\n      \"NAMEOFNATIONALITY\": \"ไทย\",\n      \"NAMEOFSECONDNATIONALITY\": \"\",\n      \"NAMEOFTHIRDNATIONALITY\": \"\",\n      \"NAME_FORMAT_INDICATOR\": \"01\"\n    }\n  ],\n  \"status\": 200\n}')
 })
-app.get('sdsd/sdsd', function (req, res) {
-  res.send('{
-  "Promotion": [
-    {
-      "id": 3,
-      "name": "ช้อป ซูเปอร์ รับส่วนลด 50% ทดสอบแก้ไข1////",
-      "description": "สิทธิพิเศษสำหรับลูกค้าบัตรเครดิตธนาคารออมสิน รับส่วนลด 100 บาท เมื่อช้อปครบ 2,000 บาท/เซลส์สลิป ที่ กูร์เมต์ มาเก็ต & โฮม เฟรช มาร์ท) ทดสอบการแก้ไขโปรโมชั่นเดิม",
-      "image_path": "https://mhr-dev.loxleyorbit.com//upload/performance/promotions/eccbc87e4b5ce2fe28308fd9f2a7baf3.jpg",
-      "start_date": "06 มิถุนายน 2561",
-      "end_date": "31 สิงหาคม 2561"
-    },
-    {
-      "id": 13,
-      "name": "dd",
-      "description": "dd",
-      "image_path": "https://mhr-dev.loxleyorbit.com//upload/performance/promotions/c51ce410c124a10e0db5e4b97fc2af39.png",
-      "start_date": "08 มิถุนายน 2561",
-      "end_date": "01 ตุลาคม 2561"
-    }
-  ]
-}')
+app.get('/api/personal/absenceQuota/:employeeId', function (req, res) {
+  res.send('{\n  \"absenceQuota\": [\n    {\n      \"QUOTATYPE\": \"02\",\n      \"QUOTATEXT\": \"สิทธิลาป่วย\",\n      \"FROM_DATE\": \"20180101\",\n      \"TO_DATE\": \"20181231\",\n      \"DEDUCTBEGIN\": \"20180101\",\n      \"DEDUCTEND\": \"20181231\",\n      \"ENTITLE\": \"40.00000\",\n      \"DEDUCT\": \"0.00000\",\n      \"REST\": \"40.00000\",\n      \"TIMEUNIT_TEXT\": \"วัน\"\n    }\n  ],\n  \"status\": 200\n}')
+})
+app.get('/api/medical/quota/:employeeId', function (req, res) {
+  res.send('{\n  \"medical_quota\": [\n    {\n      \"RULETEXT\": \"สิทธิค่ารักษาพยาบาลของบิดามารดา\",\n      \"USEDCNT\": \"0\",\n      \"QUOTA\": \"0.00\",\n      \"USED\": \"60000.00\",\n      \"REST\": \"-60000.00\"\n    },\n    {\n      \"RULETEXT\": \"สิทธิค่ารักษาพยาบาลคลีนิก หรือโรงพยาบาลเอกชนกรณีผู้ป่วยนอก\",\n      \"USEDCNT\": \"0\",\n      \"QUOTA\": \"0.00\",\n      \"USED\": \"3600.00\",\n      \"REST\": \"-3600.00\"\n    },\n    {\n      \"RULETEXT\": \"สิทธิการตรวจสุขภาพ\",\n      \"USEDCNT\": \"0\",\n      \"QUOTA\": \"0.00\",\n      \"USED\": \"0.00\",\n      \"REST\": \"0.00\"\n    }\n  ],\n  \"status\": 200\n}')
+})
+app.get('/api/personal/currentPosition/:employeeId', function (req, res) {
+  res.send('{\n  \"current_position\": {\n    \"PERNR\": \"02702376\",\n    \"NAME\": \"น.ส. เก็จวลี พ่วงสุวรรณ\",\n    \"EFFECT_DATE\": \"20120801\",\n    \"ORDER_NO\": \"บค.2(1) - 211 / 2555\",\n    \"POSITION_NAME\": \"ผู้จัดการฝ่าย\",\n    \"ORG_NAME\": \"ฝ่ายเลขานุการธนาคาร  ขึ้นตรงผู้อำนวยการธนาคารออมสิน  ธนาคารออมสิน\"\n  },\n  \"status\": 200\n}')
+})
+app.get('/api/personal/holdingPosition/:employeeId', function (req, res) {
+  res.send('{\n  \"work_history\": [\n    {\n      \"PERNR\": \"02702376\",\n      \"NAME\": \"น.ส. เก็จวลี พ่วงสุวรรณ\",\n      \"EFFECT_DATE\": \"20120801\",\n      \"ORDER_NO\": \"บค.2(1) - 211 / 2555\",\n      \"POSITION_NAME\": \"ผู้จัดการฝ่าย\",\n      \"ORG_NAME\": \"ฝ่ายเลขานุการธนาคาร  ขึ้นตรงผู้อำนวยการธนาคารออมสิน  ธนาคารออมสิน\"\n    },\n    {\n      \"PERNR\": \"02702376\",\n      \"NAME\": \"น.ส. เก็จวลี พ่วงสุวรรณ\",\n      \"EFFECT_DATE\": \"20110412\",\n      \"ORDER_NO\": \"บค.2(2) - 10 / 2554\",\n      \"POSITION_NAME\": \"หัวหน้าส่วน\",\n      \"ORG_NAME\": \"ส่วนสินเชื่อองค์กรชุมชน 1  ฝ่ายสินเชื่อองค์กรชุมชน  สายงานสินเชื่อชุมชน\"\n    },\n    {\n      \"PERNR\": \"02702376\",\n      \"NAME\": \"น.ส. เก็จวลี พ่วงสุวรรณ\",\n      \"EFFECT_DATE\": \"20101201\",\n      \"ORDER_NO\": \"บค.2 (2) - 53 / 2553\",\n      \"POSITION_NAME\": \"หัวหน้าส่วน\",\n      \"ORG_NAME\": \"ส่วนพัฒนาสถาบันการเงินชุมชน  ฝ่ายสินเชื่อองค์กรชุมชน  สายงานสินเชื่อชุมชน\"\n    }\n  ],\n  \"status\": 200\n}')
+})
+app.get('/api/discipline/:organizationId/:employeeId', function (req, res) {
+  res.send('{  \n   \"discipline_history\":[  \n      {  \n         \"PERNR\":\"03902273\",\n         \"FIRSTNAME\":\"ปนิษฐา\",\n         \"LASTNAME\":\"ธรรมฉัตรภาณี\",\n         \"CUR_EMP_DETAIL\":\"พนักงานปฏิบัติการ 7 ส่วนเลขานุการผู้บริหารระดับสูง ฝ่ายเลขานุการธนาคาร ขึ้นตรงผู้อำนวยการธนาคารออมสิน\",\n         \"INV_PUNISH_TYPE_TEXT\":\"\",\n         \"INV_PUNISH_DATEC\":\"\",\n         \"INV_FACT_DATE\":\"00000000\",\n         \"INV_FACT_NO\":\"\",\n         \"COMMIT_DATE\":\"00000000\",\n         \"INV_FACT_DETAIL1\":\"\",\n         \"INV_FACT_DETAIL2\":\"\",\n         \"INV_FACT_DETAIL3\":\"\",\n         \"INV_FACT_RESULT\":\"\",\n         \"INV_FACT_REASON\":\"\",\n         \"INV_FACT_PUNISH_DATE\":\"00000000\",\n         \"INV_FACT_REASON2\":\"\",\n         \"INV_FACT_REASON3\":\"\",\n         \"INV_FACT_PUNISH_COMM_NO\":\"\",\n         \"RECEIVE_INV_FACT_DATE\":\"00000000\",\n         \"INV_NO\":\"\",\n         \"APPOINT_COMMITEE_DATE\":\"00000000\",\n         \"ACCUSATION_DATE\":\"00000000\",\n         \"INV_DETAIL1\":\"\",\n         \"INV_DETAIL2\":\"\",\n         \"INV_DETAIL3\":\"\",\n         \"INV_DETAIL4\":\"\",\n         \"INV_DETAIL5\":\"\",\n         \"INV_EXTEND_NO\":\"\",\n         \"INV_EXTEND_DATE\":\"00000000\",\n         \"INV_PUNISH_TYPE\":\"\",\n         \"INV_PUNISH_REASON\":\"\",\n         \"INV_PUNISH_STEP\":\"0.00\",\n         \"INV_PUNISH_REASON2\":\"\",\n         \"INV_PUNISH_SALARY\":\"0\",\n         \"INV_PUNISH_REASON3\":\"\",\n         \"INV_PUNISH_DATE\":\"00000000\",\n         \"INV_PUNISH_COMM_DATE\":\"00000000\",\n         \"INV_PUNISH_SALARY_MONTH\":\"0\",\n         \"INV_PUNISH_COMM_NO\":\"\",\n         \"INV_OTHER_REASON\":\"\",\n         \"APPEAL_DATE\":\"00000000\",\n         \"APPEAL_NO\":\"\",\n         \"APPEAL_RESULT\":\"\",\n         \"APPEAL_REASON\":\"\",\n         \"APPEAL_STEP\":\"0.00\",\n         \"APPEAL_REASON2\":\"\",\n         \"APPEAL_SALARY\":\"0\",\n         \"APPEAL_REASON3\":\"\",\n         \"APPEAL_EFFECTIVE_DATE\":\"00000000\",\n         \"APPEAL_COMM_DATE\":\"00000000\",\n         \"APPEAL_SALARY_MONTH\":\"0\",\n         \"APPEAL_COMM_NO\":\"\",\n         \"PURIFY_DATE\":\"00000000\",\n         \"PURIFY_YEAR\":\"0000\",\n         \"PURIFY_EFFECTIVE_DATE\":\"00000000\",\n         \"PURIFY_DETAIL1\":\"\",\n         \"PURIFY_DETAIL2\":\"\"\n      }\n   ],\n   \"status\":200\n}')
+})
+app.get('/api/insignia/:employeeId', function (req, res) {
+  res.send('{\n  \"insignia_history\": [\n    {\n      \"INSIGNIA_CODE\": \"10\",\n      \"INSIGNIA_STATUS\": \"02\",\n      \"YEAR_REQUEST\": \"2011\",\n      \"REQUEST_BY\": \"01\",\n      \"DECLAR_DATE\": \"20120627\"\n    },\n    {\n      \"INSIGNIA_CODE\": \"11\",\n      \"INSIGNIA_STATUS\": \"01\",\n      \"YEAR_REQUEST\": \"2018\",\n      \"REQUEST_BY\": \"01\",\n      \"DECLAR_DATE\": \"00000000\"\n    }\n  ],\n  \"status\": 200\n}')
 })
  
 app.listen(port, function () {

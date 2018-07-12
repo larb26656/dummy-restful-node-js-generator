@@ -26,13 +26,13 @@ public class RouteManage {
                 pathAndParameters = "/";
             }
             else if(pathTemp == null && parameterTemp != null){
-                pathAndParameters = parameterTemp;
+                pathAndParameters = "/"+parameterTemp;
             }
             else if(pathTemp != null && parameterTemp == null){
-                pathAndParameters = pathTemp;
+                pathAndParameters = "/"+pathTemp;
             }
             else{
-                pathAndParameters = pathTemp+"/"+parameterTemp;
+                pathAndParameters = "/"+pathTemp+"/"+parameterTemp;
             }
             routeList.add(new Route(routeRawTemp.getMethod(),pathAndParameters,routeRawTemp.getResponse()));
         }
@@ -62,7 +62,7 @@ public class RouteManage {
         }
         StringJoiner valueBuilder = new StringJoiner("/");
         for(String value : values){
-            String valueTemp = value+":";
+            String valueTemp = ":"+value;
             valueBuilder.add(valueTemp);
         }
         return valueBuilder.toString();
