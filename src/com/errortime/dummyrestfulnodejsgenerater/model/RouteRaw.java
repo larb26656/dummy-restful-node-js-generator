@@ -5,17 +5,19 @@
  */
 package com.errortime.dummyrestfulnodejsgenerater.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Admin
  */
 public class RouteRaw {
     private String method;
-    private String[] path;
-    private String[] parameter;
+    private ArrayList<String> path;
+    private ArrayList<String> parameter;
     private String response;
 
-    public RouteRaw(String method, String[] path, String[] parameter, String response) {
+    public RouteRaw(String method, ArrayList<String> path, ArrayList<String> parameter, String response) {
         this.method = method;
         this.path = path;
         this.parameter = parameter;
@@ -30,19 +32,19 @@ public class RouteRaw {
         this.method = method;
     }
 
-    public String[] getPath() {
+    public ArrayList<String> getPath() {
         return path;
     }
 
-    public void setPath(String[] path) {
+    public void setPath(ArrayList<String> path) {
         this.path = path;
     }
 
-    public String[] getParameter() {
+    public ArrayList<String> getParameter() {
         return parameter;
     }
 
-    public void setParameter(String[] parameter) {
+    public void setParameter(ArrayList<String> parameter) {
         this.parameter = parameter;
     }
 

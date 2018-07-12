@@ -26,10 +26,10 @@ public class RouteManage {
                 pathAndParameters = "/";
             }
             else if(pathTemp == null && parameterTemp != null){
-                pathAndParameters = pathTemp;
+                pathAndParameters = parameterTemp;
             }
             else if(pathTemp != null && parameterTemp == null){
-                pathAndParameters = parameterTemp;
+                pathAndParameters = pathTemp;
             }
             else{
                 pathAndParameters = pathTemp+"/"+parameterTemp;
@@ -39,11 +39,11 @@ public class RouteManage {
         return routeList;
     }
     
-    private static String getPathFormat(String[] values){
+    private static String getPathFormat(ArrayList<String> values){
         if(values == null){
             return null;
         }
-        if(values.length <= 0){
+        if(values.isEmpty()){
             return null;
         }
         StringJoiner valueBuilder = new StringJoiner("/");
@@ -53,11 +53,11 @@ public class RouteManage {
         return valueBuilder.toString();
     }
     
-    private static String getParameterFormat(String[] values){
+    private static String getParameterFormat(ArrayList<String> values){
         if(values == null){
             return null;
         }
-        if(values.length <= 0){
+        if(values.isEmpty()){
             return null;
         }
         StringJoiner valueBuilder = new StringJoiner("/");

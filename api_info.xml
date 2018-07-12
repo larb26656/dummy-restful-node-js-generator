@@ -1,0 +1,48 @@
+<api_info>
+  <application_name>GSB HR Dummy Restful api</application_name>
+  <version>1.0.0</version>
+  <author>ErrorTime</author>
+  <server_info>
+    <port>3000</port>
+    <route_list>
+      <route method="post">
+        <path>
+          <name>ssss</name>
+          <name>sdsd</name>
+        </path>
+        <parameter>
+          <name></name>
+        </parameter>
+        <response>test</response>
+      </route>
+      <route method="get">
+        <path>
+          <name>sdsd</name>
+          <name>sdsd</name>
+        </path>
+        <parameter>
+        </parameter>
+        <response>{<![CDATA[
+  "Promotion": [
+    {
+      "id": 3,
+      "name": "ช้อป ซูเปอร์ รับส่วนลด 50% ทดสอบแก้ไข1////",
+      "description": "สิทธิพิเศษสำหรับลูกค้าบัตรเครดิตธนาคารออมสิน รับส่วนลด 100 บาท เมื่อช้อปครบ 2,000 บาท/เซลส์สลิป ที่ กูร์เมต์ มาเก็ต & โฮม เฟรช มาร์ท) ทดสอบการแก้ไขโปรโมชั่นเดิม",
+      "image_path": "https://mhr-dev.loxleyorbit.com//upload/performance/promotions/eccbc87e4b5ce2fe28308fd9f2a7baf3.jpg",
+      "start_date": "06 มิถุนายน 2561",
+      "end_date": "31 สิงหาคม 2561"
+    },
+    {
+      "id": 13,
+      "name": "dd",
+      "description": "dd",
+      "image_path": "https://mhr-dev.loxleyorbit.com//upload/performance/promotions/c51ce410c124a10e0db5e4b97fc2af39.png",
+      "start_date": "08 มิถุนายน 2561",
+      "end_date": "01 ตุลาคม 2561"
+    }
+  ]
+}]]></response>
+      </route>
+    </route_list>
+  </server_info>
+</api_info>
