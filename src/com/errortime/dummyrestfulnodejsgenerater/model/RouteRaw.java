@@ -9,14 +9,16 @@ package com.errortime.dummyrestfulnodejsgenerater.model;
  *
  * @author Admin
  */
-public class Route {
+public class RouteRaw {
     private String method;
-    private String pathAndParameters;
+    private String[] path;
+    private String[] parameter;
     private String response;
 
-    public Route(String method, String pathAndParameter, String response) {
+    public RouteRaw(String method, String[] path, String[] parameter, String response) {
         this.method = method;
-        this.pathAndParameters = pathAndParameter;
+        this.path = path;
+        this.parameter = parameter;
         this.response = response;
     }
 
@@ -28,12 +30,20 @@ public class Route {
         this.method = method;
     }
 
-    public String getPathAndParameter() {
-        return pathAndParameters;
+    public String[] getPath() {
+        return path;
     }
 
-    public void setPathAndParameter(String pathAndParameter) {
-        this.pathAndParameters = pathAndParameter;
+    public void setPath(String[] path) {
+        this.path = path;
+    }
+
+    public String[] getParameter() {
+        return parameter;
+    }
+
+    public void setParameter(String[] parameter) {
+        this.parameter = parameter;
     }
 
     public String getResponse() {

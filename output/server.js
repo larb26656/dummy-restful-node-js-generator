@@ -4,17 +4,9 @@ const app = express()
 const port = 8000;
 app.use(bodyParser.json())
  
-app.get('/', function (req, res) {
-  res.send('Hello World!')
+app.post('sds/dsds/sds:/dsds:', function (req, res) {
+  res.send('sss')
 })
-
-app.post('/error', function (req, res) {
-    const json = req.body
-    res.send(json)
-    
-    //return
-    //res.send('Hello World!')
-  })
  
 app.listen(port, function () {
   console.log('app listening on port %s',port)
