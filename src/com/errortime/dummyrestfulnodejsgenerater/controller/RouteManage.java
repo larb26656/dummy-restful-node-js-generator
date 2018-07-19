@@ -5,8 +5,8 @@
  */
 package com.errortime.dummyrestfulnodejsgenerater.controller;
 
-import com.errortime.dummyrestfulnodejsgenerater.model.Route;
-import com.errortime.dummyrestfulnodejsgenerater.model.RouteRaw;
+import com.errortime.dummyrestfulnodejsgenerater.model.normalgenerate.Route;
+import com.errortime.dummyrestfulnodejsgenerater.model.normalgenerate.RouteRaw;
 import java.util.ArrayList;
 import java.util.StringJoiner;
 

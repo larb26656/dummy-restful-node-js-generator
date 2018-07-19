@@ -6,10 +6,10 @@
 package com.errortime.dummyrestfulnodejsgenerater;
 
 import static com.errortime.dummyrestfulnodejsgenerater.controller.RouteManage.getRoute;
-import com.errortime.dummyrestfulnodejsgenerater.model.PackageInfo;
-import com.errortime.dummyrestfulnodejsgenerater.model.Route;
-import com.errortime.dummyrestfulnodejsgenerater.model.RouteRaw;
-import com.errortime.dummyrestfulnodejsgenerater.model.ServerInfo;
+import com.errortime.dummyrestfulnodejsgenerater.model.normalgenerate.PackageInfo;
+import com.errortime.dummyrestfulnodejsgenerater.model.normalgenerate.Route;
+import com.errortime.dummyrestfulnodejsgenerater.model.normalgenerate.RouteRaw;
+import com.errortime.dummyrestfulnodejsgenerater.model.normalgenerate.ServerInfo;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,8 +24,8 @@ import org.jdom2.input.SAXBuilder;
  *
  * @author Admin
  */
-public class Config {
-    private static Config instanace;
+public class APIConfig {
+    private static APIConfig instanace;
     private final String API_INFO_XML_FILE = "api_info.xml";
     private final String APPLICATION_NAME = "application_name";
     private final String VERSION = "version";
@@ -45,12 +45,12 @@ public class Config {
     private ServerInfo serverInfoOutput;
     
     
-    private Config(){
+    private APIConfig(){
     }
     
-    public static Config getInstance(){
+    public static APIConfig getApiConfigInstance(){
         if(instanace == null){
-            instanace = new Config();
+            instanace = new APIConfig();
         }
         return instanace;        
     }
@@ -100,6 +100,7 @@ public class Config {
             ex.printStackTrace();
         }      
     }
+    
 
     public PackageInfo getPackageInfoOutput() {
         return packageInfoOutput;

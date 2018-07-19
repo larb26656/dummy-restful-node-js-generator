@@ -1,0 +1,7 @@
+<clone_url_info>
+  <endpoint>https://mhr-dev.loxleyorbit.com/</endpoint>
+    <url>
+      <uri method="get" value="api/performance/Promotions/1"/>
+      <uri method="get" value="api/UserInfo/1"/>
+    </url>
+</clone_url_info>

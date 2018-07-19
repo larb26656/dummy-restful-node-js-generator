@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.errortime.dummyrestfulnodejsgenerater.model;
+package com.errortime.dummyrestfulnodejsgenerater.model.normalgenerate;
 
 import java.util.ArrayList;
 
