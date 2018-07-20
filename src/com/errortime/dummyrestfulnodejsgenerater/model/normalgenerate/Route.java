@@ -14,6 +14,9 @@ public class Route {
     private String pathAndParameters;
     private String response;
 
+    public Route() {
+    }
+
     public Route(String method, String pathAndParameter, String response) {
         this.method = method;
         this.pathAndParameters = pathAndParameter;

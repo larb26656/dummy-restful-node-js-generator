@@ -15,16 +15,13 @@ package com.errortime.dummyrestfulnodejsgenerater;
 import static com.errortime.dummyrestfulnodejsgenerater.CloneApiConfig.getCloneApiConfigInstance;
 import com.errortime.dummyrestfulnodejsgenerater.model.clonegenerate.CloneTaskInfo;
 import com.errortime.dummyrestfulnodejsgenerater.model.clonegenerate.RequestInfo;
+import com.errortime.dummyrestfulnodejsgenerater.model.normalgenerate.Route;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringJoiner;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -37,7 +34,9 @@ public class HTTPRequest {
     public static int apiConnectTimeout = 10;
     public static int apiWriteTimeout = 10;
     public static int apiReadTimeout = 30;
+    private static ArrayList<Route> RoutesOut = new ArrayList<>();
     static OkHttpClient client;
+    
     
     private static OkHttpClient getOKHttpClient(){
         if(client!=null){
@@ -112,12 +111,19 @@ public class HTTPRequest {
         getCloneApiConfigInstance().readApiInfo();
         CloneTaskInfo cloneTaskInfo = getCloneApiConfigInstance().getCloneTaskOutput();
         ArrayList<RequestInfo> initDatas= cloneTaskInfo.getInitData();
+        int allTaskNumber = initDatas.size();
+        System.out.println("all Task Number is "+allTaskNumber);
+        int currentTaskNumber = 1;
         for(RequestInfo initData : initDatas){
+            System.out.println(currentTaskNumber);
             try {
-                System.out.println(get(initData.getUri()));
+                String response = get(initData.getUri());
+                RoutesOut.add(new Route(initData.getMethod(),"/"+initData.getUri(),response));
+                System.out.println("finish");
             } catch (IOException ex) {
                 System.out.println(ex);
             }
+            currentTaskNumber++;
         }
     }
     
@@ -163,5 +169,11 @@ public class HTTPRequest {
     public static void setUrlEndpoint(String urlEndpoint) {
         HTTPRequest.urlEndpoint = urlEndpoint;
     }
+
+    public static ArrayList<Route> getRoutesOut() {
+        return RoutesOut;
+    }
+    
+    
 }
 

@@ -5,6 +5,8 @@
  */
 package com.errortime.dummyrestfulnodejsgenerater;
 
+import static com.errortime.dummyrestfulnodejsgenerater.CloneApiConfig.getCloneApiConfigInstance;
+import static com.errortime.dummyrestfulnodejsgenerater.Generator.generateWithCloneResponse;
 import static com.errortime.dummyrestfulnodejsgenerater.Generator.generateWithPrototype;
 import static com.errortime.dummyrestfulnodejsgenerater.HTTPRequest.sentHttpRequest;
 import freemarker.template.TemplateException;
@@ -58,10 +60,12 @@ public class Main {
         int choice = sc.nextInt();
         switch( choice ) {
             case 1:
-                 sentHttpRequest();      
+                 sentHttpRequest();   
+                 printCloneResponseMenu();
                  break;
             case 2:
-                System.out.println("2");      
+                generateWithCloneResponse(); 
+                printCloneResponseMenu();
                 break;
             case 3:
                 printMenu();

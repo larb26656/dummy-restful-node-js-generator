@@ -2,12 +2,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = ${serverInfo.port!};
+const port = 3000;
 app.use(bodyParser.json())
  
-<#list serverInfo.routeList as routeLists>
-app.${routeLists.method!}('${routeLists.pathAndParameter!}', function (req, res) {
-  res.send('${routeLists.response?js_string!}')
+<#list routeInfosList as routeInfoList>
+app.${routeInfoList.method!}('${routeInfoList.pathAndParameter!}', function (req, res) {
+  res.send('${routeInfoList.response?js_string!}')
 })
 </#list>
  
